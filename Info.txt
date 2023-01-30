@@ -21,4 +21,4 @@ The elements of the system are:
 
 During the implementation, the classes from the supplied gadgets.jar module should be used.
 
-Final grade: 5.0 - I am quite satisfied with the way I wrote this one. This will probably be the only task I will not be revisiting.
+Grade: 5.0 - I am quite satisfied with the way I wrote this one. This will probably be the only task I will not be revisiting.
