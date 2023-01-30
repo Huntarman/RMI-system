@@ -1,0 +1,24 @@
+Build a small distributed system using RMI technology.
+This system is to consist of instances of classes run in parallel (on one or several different computers).
+The system should make it possible to simulate the operation of a shop offering gadgets with advertising prints.
+Its architecture is shown in the figure below.
+architecture gadgets
+The elements of the system are:
+
+     -ClientApp - an application with a graphical interface that allows the user to browse the store's offer,
+ 	place orders, and monitor the status of orders. It uses the Registry remote interface to get a reference
+	to the object offering the IShop remote interface. He uses the IShop interface to register in the store,
+	and then browse the offer, place orders, report his own instance implementing IStatusListener 
+	to obtain notifications about the status of order changes and remove this request. 
+	He can also check the status of the order on his own request.
+     -ShopApp - an application with a graphical interface serving as a repository. 
+	The store has a Registry instance, i.e. an RMI registry instance in which it registers its own instance implementing IShop. 
+	The methods of this instance are run remotely by ClientApp and SellerApp. In particular, when changing the status of an order, 
+	it should inform the relevant ClientApp, if it is subscribed to receive notifications, about the change.
+     -SellerApp - an application with a graphical interface that allows you to handle orders. 
+	It uses the Registry remote interface to obtain a reference to the object offering the IShop remote interface. 
+	It uses the IShop interface to obtain information about orders and change their statuses.
+
+During the implementation, the classes from the supplied gadgets.jar module should be used.
+
+Final grade: 5.0 - I am quite satisfied with the way I wrote this one. This will probably be the only task I will not be revisiting.
